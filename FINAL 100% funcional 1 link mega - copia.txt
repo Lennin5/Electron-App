@@ -1,0 +1,54 @@
+Instrucciones:
+En esta carpeta solo basta con agregar los modulos de node, (npm install electron),
+archivos de nuestra app, editar el package.json y ejecutar solo este comando:
+electron-builder -w
+
+De otra manera para hacer un ejecutable/SetUp de instalación seguir estas instrucciones siguientes:
+
+1.crear carpeta con el nombre del proyecto original
+
+2.iniciar npm: (se crea el packager.json)
+npm init --yes
+
+3.instalar electron (se crean los node_modules + package-lock.json)
+npm install electron
+
+4.agregar carpetas de app y una carpeta con el icono en .png build/icon.png
+
+5.modificar archivo package.json para que pueda ejecutar nuestra app o más o menos así:
+{
+  "name": "electron-app",
+  "productName": "Nombre De La App",
+  "version": "1.0.0",
+  "description": "Descripcion de nuestra app XD",
+  "main": "app/main.js",
+  "scripts": {
+    "start":"electron .",
+    "package-win": "electron-packager . --overwrite --asar=true  --platform=win32 --arch=ia32 --icon=build/icon.ico --prune=true --out=release-builds --version-string.CompanyName=Company --version-string.FileDescription=CE --version-string.ProductName=\"Product\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "url de repo en git"
+  },
+  "keywords": [],
+  "author": "Nombre de nuestra empresa",
+  "license": "ISC"
+}
+
+
+NOTA: No olvidar deeliminar la dependecnias en el archivo package.json, (aún así a la hora de crear el instalador nos lo dirá)
+
+6.Ahora ejecutar en el cmd (SI NO SE HA HECHO Y EN MODO ADMINISTRADOR) el comando:
+npm install -g electron-builder
+
+7.ahora en el CDM normal abrir en la carpeta del proyecto:
+electron-builder -w
+
+8.yyyyy posiblemente nos pida un acceso si tenemos un antivirus (en mi caso tengo el 360Security) Y se lo permitiremos
+
+9.Buscar en nuestra carpeta de la app una carpeta llamada DEV, allí estará nuestro SetUp y en la carpeta win-unpacked estará el ejecutable
+
+
+
+
+

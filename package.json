@@ -1,0 +1,18 @@
+{
+  "name": "nombre-de-la-app",
+  "productName": "Nombre De La App",
+  "version": "1.0.0",
+  "description": "This is my kernel of an Electro App",
+  "main": "app/main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-win": "electron-packager . --overwrite --asar=true  --platform=win32 --arch=ia32 --icon=build/icon.ico --prune=true --out=release-builds --version-string.CompanyName=Company --version-string.FileDescription=CE --version-string.ProductName=\"Product\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "url de github"
+  },
+  "keywords": [],
+  "author": "Nombre de la empresa",
+  "license": "ISC"
+}
